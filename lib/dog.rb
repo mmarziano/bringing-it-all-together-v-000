@@ -72,10 +72,11 @@ class Dog
   def self.new_from_db(dog) 
     sql = <<-SQL 
       SELECT * FROM dogs
-      WHERE id = ? 
     SQL
     
-    DB[:conn].execute(sql).flatten
+    dog = DB[:conn].execute(sql).flatten
+    
+    dog.each do |
     new_dog = Dog.new(name: dog[1], breed: dog[2], id: dog[0])
     new_dog
   end 
