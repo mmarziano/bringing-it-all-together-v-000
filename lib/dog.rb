@@ -85,7 +85,7 @@ class Dog
     SQL
     
     dog = DB[:conn].execute(sql, name).flatten
-    dog.create
+    dog.new_from_db
   
   end 
   
