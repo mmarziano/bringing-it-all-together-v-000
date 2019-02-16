@@ -69,16 +69,13 @@ class Dog
     
   end 
   
-  def self.new_from_db(dog) 
-    sql = <<-SQL 
-      SELECT * FROM dogs
-    SQL
-    
-    dog = DB[:conn].execute(sql).flatten
-    
-    dog.each do |
-    new_dog = Dog.new(name: dog[1], breed: dog[2], id: dog[0])
-    new_dog
+  def self.new_from_db(info) 
+   attributes = { 
+      :id => info[0],
+      :name => info[1],
+      :breed => info[2]
+    }
+    self.new(attributes)
   end 
   
   def self.find_by_name(name) 
