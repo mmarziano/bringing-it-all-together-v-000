@@ -80,7 +80,7 @@ class Dog
     SQL
     
     dog = DB[:conn].execute(sql, name).flatten
-    dog.name
+  
   end 
   
   def self.update 
