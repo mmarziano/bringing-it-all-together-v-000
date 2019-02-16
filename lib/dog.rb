@@ -61,7 +61,7 @@ class Dog
   end 
   
   def self.find_or_create_by(dog) 
-     if dog.id != nil 
+     if dog[:id] != nil 
        self.find_by_id(dog.id)
       else 
         self.create(dog)
