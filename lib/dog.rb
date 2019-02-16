@@ -75,7 +75,7 @@ class Dog
       WHERE id = ? 
     SQL
     
-    dog = DB[:conn].execute(sql, dog.id).flatten
+    DB[:conn].execute(sql, dog.id).flatten
   end 
   
   def self.find_by_name(name) 
