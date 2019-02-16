@@ -98,8 +98,13 @@ class Dog
   
   end 
   
-  def self.update 
+  def self.update(dog) 
+    sql = <<-SQL 
+      SELECT * FROM dogs
+      WHERE id = ? 
+    SQL
     
+    DB[:conn].execute(sql, name)  
   end 
     
     
