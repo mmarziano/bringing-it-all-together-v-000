@@ -101,10 +101,11 @@ class Dog
   def self.update(dog) 
     sql = <<-SQL 
       UPDATE dogs
-      SET name
+      SET name = ?, breed = ?
+      WHERE id = ?
     SQL
     
-    DB[:conn].execute(sql, dog.id)  
+    DB[:conn].execute(sql, dog.name, dog.breed, dog.id)  
   end 
     
     
