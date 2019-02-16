@@ -69,7 +69,7 @@ class Dog
 
       dog = DB[:conn].execute(sql, name, breed).first
 
-      if dog
+      if dog != nil
         new = self.new_from_db(dog)
       else
         new = self.create({:name => name, :breed => breed})
