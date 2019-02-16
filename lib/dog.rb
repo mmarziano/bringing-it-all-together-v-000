@@ -79,7 +79,7 @@ class Dog
       WHERE name = ? 
     SQL
     
-    dog = DB[:conn].execute(sql, name).flatten
+    dog = DB[:conn].execute(sql, name).flatten[1]
   
   end 
   
