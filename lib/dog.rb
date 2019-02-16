@@ -100,7 +100,7 @@ class Dog
   
   def self.update(dog) 
     sql = <<-SQL 
-      SELECT * FROM dogs
+      UPDATE * FROM dogs
       WHERE id = ? 
     SQL
     
